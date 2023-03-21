@@ -80,8 +80,6 @@ document.addEventListener("click", buttonClicked);
 function buttonClicked(ev) {
   let target = ev.target
   let clsTarget = ev.target.classList[1];
-  let idTarget = ev.target.id;
-  // let klik = ev.target;
   let checkClass = ev.target.classList[0] == "fa";
   let checkID = ev.target.id
 
@@ -112,105 +110,36 @@ function buttonClicked(ev) {
       target.classList.remove("fa-question-circle-o");
       ShowMoves()
       break;
-    case (checkClass && checkID !== targetArray[0].id && firstKlik):
+     case(checkClass && targetArray[0].classList[1] == clsTarget && checkID !== targetArray[0].id && otwarteOkna<2):
+      console.log(4)
+      document.getElementById(`${targetArray[0].id}`).id = "hidden";
+      document.getElementById(`${checkID}`).id = "hidden";
+      numOfMoves++
+      otwarteOkna = 0
+      ShowMoves()
+     break 
+    case (checkClass && checkID !== targetArray[0].id && firstKlik && otwarteOkna<2):
       console.log(2)
       numOfMoves++
+      otwarteOkna++
       targetArray.unshift(target);
       targetArray.pop();
       ev.target.classList.remove("fa-question-circle-o");
-      console.log(targetArray)
+      console.log(otwarteOkna +" oraz "+ targetArray)
       ShowMoves()
       break
-    case (checkClass && checkID !== (targetArray[1].id && targetArray[2].id)):
+    case (checkClass && otwarteOkna == 2 && checkID !== (targetArray[1].id && targetArray[0].id)):
       console.log(3)
+      document.getElementById(targetArray[0].id).classList.add("fa-question-circle-o");
+      document.getElementById(targetArray[1].id).classList.add("fa-question-circle-o");
+      targetArray.unshift(target);
+      targetArray.pop();
+      ev.target.classList.remove("fa-question-circle-o");
+      numOfMoves++
+      otwarteOkna = 1
+      ShowMoves()
     break
   }
 
 }
-// document.addEventListener("click", comperFunktion);
-// function comperFunktion(eve) {
-//   console.log(otwarteOkna);
-//   console.log(firstKlik);
-//   let clsTarget = eve.target.classList[1];
-//   let idTarget = eve.target.id;
-//   let klik = eve.target;
-//   let targFa = eve.target.classList[0] == "fa";
-
-  // if(!firstKlik){    
-  //   targetArray.unshift(klik);
-  //   targetArray.pop();
-  //   firstKlik = true;
-  //   numOfMoves++
-  //   otwarteOkna++
-  //   eve.target.classList.remove("fa-question-circle-o");
-  //   // ShowMoves()
-
-  // }
-
-  // if (targFa && idTarget !== targetArray[0].id) {
-  //   targetArray.unshift(klik);
-  //   targetArray.pop();
-  //   eve.target.classList.remove("fa-question-circle-o");
-  //   console.log(targetArray)
-
-
-  // if (firstKlik && targetArray[1].id !== idTarget) {
-  //   closingOpenedTile(eve);
-  //   numOfMoves++;
-  //   otwarteOkna++;
-  //   console.log("piersze if");
-  // }
-  // if (
-  //   targetArray[1].classList[1] == clsTarget &&
-  //   targetArray[1].id !== idTarget &&
-  //   otwarteOkna == 2
-  // ) {
-  //   console.log("takie same po porownaniu");
-  //   document.getElementById(`${targetArray[1].id}`).id = "hidden";
-  //   document.getElementById(`${idTarget}`).id = "hidden";
-  //   console.log("var otwarte okna: " + otwarteOkna);
-  // } 
-  // else {
-  //   closingOpenedTile(eve);
-  //   console.log(
-  //     "warnunek cls: " + targetArray[1].classList[1] + " ==> " + clsTarget
-  //   );
-  //   console.log("warunek ID: " + targetArray[1].id + " ==> " + idTarget);
-  // }
-  // }
-// }
-
 restart();
-
-
-function closingOpenedTile(ev) {
-  if(otwarteOkna == 3 && eve.target.id == targetArray[1].id){
-    otwarteOkna = 1
-    document.getElementById(targetArray[1].id)
-    .classList.add("fa-question-circle-o");
-    console.log(111)
-  }
-  else if(otwarteOkna == 3 && eve.target.id == targetArray[2].id){
-    otwarteOkna = 1
-    document.getElementById(targetArray[1].id)
-    .classList.add("fa-question-circle-o");
-    console.log(222)
-  }
-  else if (otwarteOkna == 3)  { 
-    otwarteOkna = 1;
-    document.getElementById(targetArray[1].id)
-      .classList.add("fa-question-circle-o");
-    document.getElementById(targetArray[2].id)
-      .classList.add("fa-question-circle-o");
-      console.log(333)
-
-    console.log(
-      "zamyka cls and id: " + targetArray[1].classList[1],
-      targetArray[1].id + " and " + targetArray[2].classList[1],
-      targetArray[2].id
-    );
-  }
-
-  console.log("otwrte okan z funcji " + otwarteOkna);
-  ShowMoves();
-} 
