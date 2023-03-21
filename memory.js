@@ -8,10 +8,10 @@ let otwarteOkna = 0;
 let targetArray = new Array(3);
 
 
-let btn = document.getElementsByClassName("btn");
-let plus = document.getElementById("plusik");
-let minus = document.getElementById("minusik");
-let reset = document.getElementById("reset");
+const btn = document.getElementsByClassName("btn");
+const plus = document.getElementById("plusik");
+const minus = document.getElementById("minusik");
+const reset = document.getElementById("reset");
 
 const primalArray = [
   "fa fa-apple", "fa fa-stack-overflow", "fa fa-whatsapp", "fa fa-steam-square", "fa fa-reddit-alien",
@@ -152,7 +152,7 @@ function shuffleArray(arr) {
   return shuffled;
 }
 
-function restart() {  // RESET function
+function restart() {  // RESET function by AI
   const myNode = document.getElementById("tester");
   while (myNode.firstChild) {
     myNode.removeChild(myNode.lastChild);
