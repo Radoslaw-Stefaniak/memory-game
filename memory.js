@@ -12,7 +12,6 @@ let btn = document.getElementsByClassName("btn");
 let plus = document.getElementById("plusik");
 let minus = document.getElementById("minusik");
 let reset = document.getElementById("reset");
-// let tile = document.getElementById("tile")
 
 const primalArray = [
   "fa fa-apple", "fa fa-stack-overflow", "fa fa-whatsapp", "fa fa-steam-square", "fa fa-reddit-alien",
@@ -143,3 +142,31 @@ function buttonClicked(ev) {
 
 }
 restart();
+// do tąd działa dalej funcja przerobiona prze AI
+
+function shuffleArray(arr) {
+  const halfLength = arr.length / 2;
+  const firstHalf = arr.slice(0, halfLength);
+  const secondHalf = arr.slice(halfLength, arr.length);
+  const shuffled = firstHalf.concat(secondHalf).sort(() => Math.random() - 0.5);
+  return shuffled;
+}
+
+function restart() {  // RESET function
+  const myNode = document.getElementById("tester");
+  while (myNode.firstChild) {
+    myNode.removeChild(myNode.lastChild);
+  }
+  faIconClass = shuffleArray(primalArray.slice(0, numberOfTiles));
+  numOfMoves = 0;
+  otwarteOkna = 0
+  firstKlik = false;
+  for (let iRow = 0; iRow < tilesCol * tilesRow; iRow++) {
+    const div = document.createElement("div");
+    div.className = `${faIconClass[iRow]} fa-question-circle-o`;
+    div.id = `id${iRow}`;
+    document.querySelector("#tester").appendChild(div);
+  }
+  ShowMoves();
+  myStyle();
+}
