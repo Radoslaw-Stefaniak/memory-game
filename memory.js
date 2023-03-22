@@ -175,6 +175,6 @@ let zmienna_sprawdzajaca_rebase = 4 //zmieniam na 4
 let reb = 2
 
 function fuu(a , b){
-  return console.log(a+b)
+  return console.log(a-b)
 }
 fuu(zmienna_sprawdzajaca_rebase, reb)
