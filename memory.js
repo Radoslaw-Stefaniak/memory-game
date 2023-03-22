@@ -171,7 +171,7 @@ function restart() {  // RESET function by AI
   myStyle();
 }
 
-let zmienna_sprawdzajaca_rebase = 3
+let zmienna_sprawdzajaca_rebase = 4 //zmieniam na 4
 let reb = 2
 
 function fuu(a , b){
