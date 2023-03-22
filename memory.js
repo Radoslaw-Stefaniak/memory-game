@@ -170,3 +170,11 @@ function restart() {  // RESET function by AI
   ShowMoves();
   myStyle();
 }
+
+let zmienna_sprawdzajaca_rebase = 3
+let reb = 2
+
+function fuu(a , b){
+  return console.log(a+b)
+}
+fuu(zmienna_sprawdzajaca_rebase, reb)
