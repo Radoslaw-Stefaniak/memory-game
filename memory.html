@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MemoryGame</title>
     <link rel="stylesheet" href="memory.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/d81392bea2.js"
       crossorigin="anonymous"
@@ -14,23 +20,18 @@
   <body>
     <div class="game">
       <div class="score-board">
-
-        <button class="btn" id="reset" >Reset</button>
-        <div>
-          <button class="btn" id="plusik" >Plus</button>
-          <button class="btn" id="minusik" >Minus</button>
-          <!-- <div lang="anime" id="tile" class="fa fa-arrows-v "></div> -->
-
+        <div class="buttons">
+          <button class="btn" id="reset">Reset</button>
+          <button class="btn" id="plusik">Plus</button>
+          <button class="btn" id="minusik">Minus</button>
         </div>
         <div class="stats">
           <div id="moves"></div>
-          <div id="timer">Time: 0 sec</div>
+          <div id="timer">00:00:00</div>
         </div>
       </div>
 
-      <div id="tester" class="game-board">
-
-      </div>
+      <div id="tester" class="game-board"></div>
     </div>
 
     <script src="memory.js"></script>
