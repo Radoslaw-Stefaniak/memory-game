@@ -223,9 +223,7 @@ function buttonClicked(ev) {
       target.classList.remove("fa-question-circle-o");
       ShowMoves();
       break;
-    case checkClass &&
-      targetArray[0].classList[1] == clsTarget &&
-      checkID !== targetArray[0].id &&
+    case checkClass && targetArray[0].classList[1] == clsTarget && checkID !== targetArray[0].id &&
       otwarteOkna < 2:
       console.log(4);
       document.getElementById(`${targetArray[0].id}`).id = "hidden";

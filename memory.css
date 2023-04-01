@@ -133,10 +133,13 @@ html {
 #tester > div:hover {
   background-color: #d8b931;
 }
+#tester > div:not(.fa-question-circle-o){
+  background-color: #d8b931;
+}
 #hidden {
   visibility: hidden;
 }
-div[lang="anime"] {
+#tester > div:not(.fa-questin-circle-0){
   animation: anime 0.4s linear both;
 }
 @-webkit-keyframes anime {
@@ -161,6 +164,7 @@ div[lang="anime"] {
     transform: rotate3d(1, 1, 0, -360deg);
   }
 }
+
 
 /* dodatkowy popup   */
 #popap {
