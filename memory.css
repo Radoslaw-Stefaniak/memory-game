@@ -6,9 +6,9 @@
   --btnbg: #004752;
   --btncolor: #06c1de;
 }
+
 html {
   font-size: 25px;
-  background-image: url("https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-size: cover;
   background-position: center center;
   font-family: Arial, Helvetica, sans-serif;
@@ -17,20 +17,30 @@ html {
   align-items: center;
   height: 100vh;
 }
+
+#svg-container {
+  position: fixed;
+  top: -50px;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+#svg-container svg {
+  width: auto;
+  height: 100%;
+}
+
+
 .game {
   display: flex;
   justify-content: space-between;
   border-radius: 0.5rem;
-  padding: 0.2rem;
+  padding: 1.5rem;
   height: fit-content;
-  box-shadow: 2px 2px 5px #0b0b0b;
-  background-color: #4158d0;
-  background-image: linear-gradient(
-    -45deg,
-    #4158d0 0%,
-    #c850c0 26%,
-    #ffcc70 100%
-  );
+  box-shadow: 5px 5px 15px #0b0b0b;
+  backdrop-filter: blur(20px);
+
 }
 
 /* /--/- TABLICA WYNIKÓW --- */
@@ -140,7 +150,7 @@ html {
   visibility: hidden;
 }
 #tester > div:not(.fa-questin-circle-0){
-  animation: anime 0.4s linear both;
+  animation: anime 0.8s linear both;
 }
 @-webkit-keyframes anime {
   0% {
@@ -165,8 +175,8 @@ html {
   }
 }
 
-
 /* dodatkowy popup   */
+
 #popap {
   z-index: 6;
   position: fixed;
@@ -174,16 +184,24 @@ html {
   left: 50%;
   transform: translateX(-50%);
   padding: 2rem;
-  backdrop-filter: blur(15px);
   font-family: "M PLUS 1 Code", sans-serif;
   color: #efeded;
   text-shadow: 2px 2px 3px #0b0b0b;
+  border: 10px solid rgb(17, 216, 199);
   border-radius: 0.7rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+    background-color: #4158d0;
+  background-image: linear-gradient(
+    -45deg,
+    #4158d0 0%,
+    #c850c0 26%,
+    #ffcc70 100%
+  );
+  width: 550px;
 }
 footer {
   color: #ececec;
