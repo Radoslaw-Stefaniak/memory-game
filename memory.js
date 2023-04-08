@@ -1,7 +1,6 @@
 let tilesCol = 6;
 let tilesRow = 4;
 let numberOfTiles = tilesCol * tilesRow;
-// let lastClicked = ["1", "2"];
 let numOfMoves = 0;
 let firstKlik = false;
 let otwarteOkna = 0;
@@ -68,8 +67,9 @@ const primalArray = [
   "fa fa-warning",
 ];
 
-function restart(arr, n) {
   // RESET function
+
+function restart(arr, n) {
   (() => {
     const myNode = document.getElementById("tester");
     while (myNode.firstChild) {
@@ -153,9 +153,6 @@ function checkHiddenClassElements(classname) {
   });
 
   if (allHidden) {
-    console.log(
-      `All elements with class "${classname}" have ID set to "hidden"`
-    );
     const inputField = document.getElementById("timer").innerHTML;
     showPopup(
       `Gratulacje!! Odkryłeś wszystkie elementy w ${numOfMoves} ruchach. 
@@ -173,7 +170,7 @@ function showPopup(message) {
   popup.textContent = message;
   const closeButton = document.createElement("button");
   closeButton.className = "btn";
-  closeButton.textContent = "OK";
+  closeButton.textContent = "O K";
   // closeButton.style.marginLeft = "10px";
 
   // Add a click event listener to the button to remove the popup
@@ -187,6 +184,7 @@ function showPopup(message) {
   document.body.appendChild(popup);
 }
 
+// Event functon for game logic
 document.addEventListener("click", buttonClicked);
 function buttonClicked(ev) {
   let target = ev.target;
